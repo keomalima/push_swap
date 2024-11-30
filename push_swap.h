@@ -6,7 +6,7 @@
 /*   By: keomalima <keomalima@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 11:13:07 by keomalima         #+#    #+#             */
-/*   Updated: 2024/11/29 15:57:50 by keomalima        ###   ########.fr       */
+/*   Updated: 2024/11/30 15:37:36 by keomalima        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,10 @@
 #include "libft/libft.h"
 #include "printf/ft_printf.h"
 
-int	count_nbrlen(int n);
-int	is_nbr_repeat(int ac, char **av);
-int	is_arg_valid(int ac, char **av);
+int		arg_count(int ac, char **av, int *len);
+int		is_arg_valid(int ac, char **av);
+int		parse_args(int ac, char **av, int *stack);
+int		split_to_stack(char *av, int *stack, int *error, int *j);
+int		validate_unique_stack(int *stack, int len);
 
 #endif

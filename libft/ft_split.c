@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kricci-d <kricci-d@student.42.fr>          +#+  +:+       +#+        */
+/*   By: keomalima <keomalima@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 15:02:15 by kricci-d          #+#    #+#             */
-/*   Updated: 2024/11/06 11:41:55 by kricci-d         ###   ########.fr       */
+/*   Updated: 2024/11/30 10:03:16 by keomalima        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,10 @@ static	void	free_tab(char **tab)
 	if (tab)
 	{
 		while (tab[i])
+		{
 			free(tab[i++]);
+			tab = NULL;
+		}
 		free(tab);
 	}
 }
