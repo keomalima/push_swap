@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_utils.c                                  :+:      :+:    :+:   */
+/*   stack_parse_utils.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: keomalima <keomalima@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 15:10:38 by keomalima         #+#    #+#             */
-/*   Updated: 2024/11/30 15:38:11 by keomalima        ###   ########.fr       */
+/*   Updated: 2024/11/30 17:35:55 by keomalima        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	validate_unique_stack(int *stack, int len)
 	while (len > ++i)
 	{
 		j = i + 1;
-		while (stack[j])
+		while (len > j)
 		{
 			if (stack[i] == stack[j])
 				return (1);
@@ -86,6 +86,7 @@ int	arg_count(int ac, char **av, int *len)
 {
 	int		i;
 	char	**tab;
+	char	**temp;
 
 	i = 0;
 	while (ac > ++i)
@@ -94,6 +95,7 @@ int	arg_count(int ac, char **av, int *len)
 		if (ft_strchr(av[i], 32))
 		{
 			tab = ft_split(av[i], 32);
+			temp = tab;
 			if (!tab)
 				return (1);
 			while (*tab)
@@ -101,7 +103,7 @@ int	arg_count(int ac, char **av, int *len)
 				(*len)++;
 				free(*tab++);
 			}
-			free(tab);
+			free(temp);
 		}
 		else
 			(*len)++;

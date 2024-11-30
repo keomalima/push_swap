@@ -6,7 +6,7 @@
 #    By: keomalima <keomalima@student.42.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/29 14:02:27 by keomalima         #+#    #+#              #
-#    Updated: 2024/11/29 14:58:20 by keomalima        ###   ########.fr        #
+#    Updated: 2024/11/30 15:44:30 by keomalima        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = push_swap.a
 RM = rm -f
 CC = cc
 FLAGS = -Wall -Werror -Wextra
-SRCS = push_swap.c
+SRCS = push_swap.c stack_parse_utils.c
 OBJS = $(SRCS:.c=.o)
 
 LIBFTDIR = ./libft
