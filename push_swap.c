@@ -6,7 +6,7 @@
 /*   By: keomalima <keomalima@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 11:07:26 by keomalima         #+#    #+#             */
-/*   Updated: 2024/11/30 17:31:48 by keomalima        ###   ########.fr       */
+/*   Updated: 2024/11/30 17:38:52 by keomalima        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,13 +31,14 @@ int	push_swap(int ac, char**av)
 	int	*stack_a;
 	int	*temp;
 	int	len;
+	int	i;
 
 	stack_a = NULL;
 	len = 0;
 	if (stack_parse(ac, av, &len, &stack_a))
 		return (1);
 	temp = stack_a;
-	int i = 0;
+	i = 0;
 	while (len > i)
 		ft_printf("[%i]", stack_a[i++]);
 	free(temp);

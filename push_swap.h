@@ -6,17 +6,17 @@
 /*   By: keomalima <keomalima@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 11:13:07 by keomalima         #+#    #+#             */
-/*   Updated: 2024/11/30 17:30:58 by keomalima        ###   ########.fr       */
+/*   Updated: 2024/11/30 17:37:31 by keomalima        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-#include <stdlib.h>
-#include <limits.h>
-#include "libft/libft.h"
-#include "printf/ft_printf.h"
+# include <stdlib.h>
+# include <limits.h>
+# include "libft/libft.h"
+# include "printf/ft_printf.h"
 
 int		arg_count(int ac, char **av, int *len);
 int		stack_parse(int ac, char **av, int *len, int **stack);
