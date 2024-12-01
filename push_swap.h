@@ -6,7 +6,7 @@
 /*   By: keomalima <keomalima@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 11:13:07 by keomalima         #+#    #+#             */
-/*   Updated: 2024/11/30 17:37:31 by keomalima        ###   ########.fr       */
+/*   Updated: 2024/12/01 17:27:03 by keomalima        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,11 @@ int		is_arg_valid(int ac, char **av);
 int		parse_args(int ac, char **av, int *stack);
 int		split_to_stack(char *av, int *stack, int *error, int *j);
 int		validate_unique_stack(int *stack, int len);
+
+void	swap_a(int *stack, int len);
+void	swap_b(int *stack, int len);
+void	swap_ss(int *stack, int len);
+void	push_a(int *stack_a, int *stack_b, int *stack_a_len, int *stack_b_len);
+void	push_b(int *stack_a, int *stack_b, int *stack_a_len, int *stack_b_len);
 
 #endif
