@@ -6,7 +6,7 @@
 #    By: keomalima <keomalima@student.42.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/29 14:02:27 by keomalima         #+#    #+#              #
-#    Updated: 2024/12/01 21:10:24 by keomalima        ###   ########.fr        #
+#    Updated: 2024/12/01 21:38:45 by keomalima        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ RM = rm -f
 CC = cc
 FLAGS = -Wall -Werror -Wextra
 SRCS = push_swap.c stack_parse_utils.c swap_algo.c push_swap.c \
-	rotate_algo.c
+	rotate_algo.c rev_rot_algo.c
 OBJS = $(SRCS:.c=.o)
 
 LIBFTDIR = ./libft

@@ -6,7 +6,7 @@
 /*   By: keomalima <keomalima@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 11:07:26 by keomalima         #+#    #+#             */
-/*   Updated: 2024/12/01 21:30:55 by keomalima        ###   ########.fr       */
+/*   Updated: 2024/12/01 21:54:10 by keomalima        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,9 @@ int	push_swap(int ac, char**av)
 	push_b(stack_a, stack_b, &stack_a_len, &stack_b_len);
 	rotate_a(stack_a, stack_a_len);
 	rot_a_b(stack_a, stack_b, stack_a_len, stack_b_len);
+	push_a(stack_a, stack_b, &stack_a_len, &stack_b_len);
+	rev_rot_a(stack_a, stack_a_len);
+	rev_rot(stack_a, stack_b, stack_a_len, stack_b_len);
 	ft_printf("Stack_a\n");
 	while (stack_a_len > i)
 		ft_printf("[%i]", stack_a[i++]);

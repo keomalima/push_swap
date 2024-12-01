@@ -6,7 +6,7 @@
 /*   By: keomalima <keomalima@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 11:13:07 by keomalima         #+#    #+#             */
-/*   Updated: 2024/12/01 21:20:55 by keomalima        ###   ########.fr       */
+/*   Updated: 2024/12/01 21:45:47 by keomalima        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,8 @@ void	push_b(int *stack_a, int *stack_b, int *stack_a_len, int *stack_b_len);
 void	rotate_a(int *stack_a, int stack_a_len);
 void	rotate_b(int *stack_b, int stack_b_len);
 void	rot_a_b(int *stack_a, int *stack_b, int stack_a_len, int stack_b_len);
+void	rev_rot_a(int *stack_a, int stack_a_len);
+void	rev_rot_b(int *stack_b, int stack_b_len);
+void	rev_rot(int *stack_a, int *stack_b, int stack_a_len, int stack_b_len);
 
 #endif
