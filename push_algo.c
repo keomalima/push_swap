@@ -6,7 +6,7 @@
 /*   By: keomalima <keomalima@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/30 21:46:42 by keomalima         #+#    #+#             */
-/*   Updated: 2024/12/01 18:10:05 by keomalima        ###   ########.fr       */
+/*   Updated: 2024/12/01 18:16:01 by keomalima        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ void	push_a(int *stack_a, int *stack_b, int *stack_a_len, int *stack_b_len)
 		i = -1;
 		while (*stack_b_len > ++i)
 			stack_b[i] = stack_b[i + 1];
+		stack_b[i] = 0;
 		(*stack_b_len)--;
 		(*stack_a_len)++;
 		ft_printf("pa\n");
@@ -52,6 +53,7 @@ void	push_b(int *stack_a, int *stack_b, int *stack_a_len, int *stack_b_len)
 		i = -1;
 		while (*stack_a_len - 1 > ++i)
 			stack_a[i] = stack_a[i + 1];
+		stack_a[i] = 0;
 		(*stack_a_len)--;
 		(*stack_b_len)++;
 		ft_printf("pb\n");
