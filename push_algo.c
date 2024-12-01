@@ -6,7 +6,7 @@
 /*   By: keomalima <keomalima@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/30 21:46:42 by keomalima         #+#    #+#             */
-/*   Updated: 2024/12/01 18:16:01 by keomalima        ###   ########.fr       */
+/*   Updated: 2024/12/01 21:30:25 by keomalima        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	push_a(int *stack_a, int *stack_b, int *stack_a_len, int *stack_b_len)
 	int	i;
 	int	temp;
 
-	if (stack_b_len > 0)
+	if (*stack_b_len > 0)
 	{
 		temp = *stack_a_len;
 		while (temp > 0)
@@ -41,7 +41,7 @@ void	push_b(int *stack_a, int *stack_b, int *stack_a_len, int *stack_b_len)
 	int	i;
 	int	temp;
 
-	if (stack_a_len > 0)
+	if (*stack_a_len > 0)
 	{
 		temp = *stack_b_len;
 		while (temp > 0)
