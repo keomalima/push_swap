@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: keomalima <keomalima@student.42.fr>        +#+  +:+       +#+         #
+#    By: kricci-d <kricci-d@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/29 14:02:27 by keomalima         #+#    #+#              #
-#    Updated: 2024/12/01 21:38:45 by keomalima        ###   ########.fr        #
+#    Updated: 2024/12/02 12:23:09 by kricci-d         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,19 +15,16 @@ RM = rm -f
 CC = cc
 FLAGS = -Wall -Werror -Wextra
 SRCS = push_swap.c stack_parse_utils.c swap_algo.c push_swap.c \
-	rotate_algo.c rev_rot_algo.c
+	rotate_algo.c rev_rot_algo.c sort_algo.c
 OBJS = $(SRCS:.c=.o)
 
 LIBFTDIR = ./libft
 LIBFT = $(LIBFTDIR)/libft.a
 
-PRINTFDIR = ./printf
-PRINTF = $(PRINTFDIR)/libftprintf.a
-
 all : $(NAME)
 
-$(NAME) : $(OBJS) $(LIBFT) $(PRINTF)
-	ar rcs $(NAME) $(OBJS) $(LIBFT) $(PRINTF)
+$(NAME) : $(OBJS) $(LIBFT)
+	ar rcs $(NAME) $(OBJS) $(LIBFT)
 
 $(LIBFT) :
 	$(MAKE) -C $(LIBFTDIR)
@@ -41,12 +38,10 @@ $(PRINTF) :
 clean:
 	$(RM) $(OBJS)
 	$(MAKE) -C $(LIBFTDIR) clean
-	$(MAKE) -C $(PRINTFDIR) clean
 
 fclean : clean
 	$(RM) $(NAME)
 	$(MAKE) -C $(LIBFTDIR) fclean
-	$(MAKE) -C $(PRINTFDIR) fclean
 
 re : fclean all
 

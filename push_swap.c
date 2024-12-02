@@ -3,14 +3,31 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: keomalima <keomalima@student.42.fr>        +#+  +:+       +#+        */
+/*   By: kricci-d <kricci-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 11:07:26 by keomalima         #+#    #+#             */
-/*   Updated: 2024/12/01 21:54:10 by keomalima        ###   ########.fr       */
+/*   Updated: 2024/12/02 13:28:07 by kricci-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int	is_order(int *stack, int len)
+{
+	int	i;
+
+	i = 0;
+	if (*stack)
+	{
+		while (len - 1 > i)
+		{
+			if (stack[i] > stack[i + 1])
+				return (1);
+			i++;
+		}
+	}
+	return (0);
+}
 
 int	stack_parse(int ac, char **av, int *len, int **stack)
 {
@@ -24,6 +41,19 @@ int	stack_parse(int ac, char **av, int *len, int **stack)
 	if (validate_unique_stack(*stack, *len))
 		return (free(*stack), 1);
 	return (0);
+}
+
+void	algo_parse(int *stack_a, int *stack_b, int *a_len, int *b_len)
+{
+	if (is_order(stack_a, *a_len))
+	{
+		if (*a_len == 2)
+			swap_a(stack_a, *a_len);
+		if (*a_len == 3)
+			stack_3(stack_a, *a_len);
+		if (*a_len == 4)
+			stack_4(stack_a, stack_b, a_len, b_len);
+	}
 }
 
 int	push_swap(int ac, char**av)
@@ -42,23 +72,19 @@ int	push_swap(int ac, char**av)
 	if (!stack_b)
 		return (1);
 	i = 0;
-	swap_a(stack_a, stack_a_len);
-	push_b(stack_a, stack_b, &stack_a_len, &stack_b_len);
-	push_b(stack_a, stack_b, &stack_a_len, &stack_b_len);
-	rotate_a(stack_a, stack_a_len);
-	rot_a_b(stack_a, stack_b, stack_a_len, stack_b_len);
-	push_a(stack_a, stack_b, &stack_a_len, &stack_b_len);
-	rev_rot_a(stack_a, stack_a_len);
-	rev_rot(stack_a, stack_b, stack_a_len, stack_b_len);
+	algo_parse(stack_a, stack_b, &stack_a_len, &stack_b_len);
 	ft_printf("Stack_a\n");
 	while (stack_a_len > i)
 		ft_printf("[%i]", stack_a[i++]);
 	free(stack_a);
 	i = 0;
-	ft_printf("\nStack_b\n");
-	while (stack_b_len > i)
-		ft_printf("[%i]", stack_b[i++]);
-	free(stack_b);
+	if (stack_b)
+	{
+		ft_printf("\nStack_b\n");
+		while (stack_b_len > i)
+			ft_printf("[%i]", stack_b[i++]);
+		free(stack_b);
+	}
 	return (0);
 }
 

@@ -1,35 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_hex.c                                     :+:      :+:    :+:   */
+/*   ft_print_char.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kricci-d <kricci-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/18 15:11:13 by keomalima         #+#    #+#             */
-/*   Updated: 2024/11/21 11:47:24 by kricci-d         ###   ########.fr       */
+/*   Created: 2024/10/18 14:59:18 by keomalima         #+#    #+#             */
+/*   Updated: 2024/12/02 09:42:49 by kricci-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_dec_to_hex(char spec, unsigned int nbr, int *len)
+void	ft_print_char(char spec, va_list arg, int *len)
 {
-	char	*hex_case;
+	char	c;
+	char	*str;
 
-	if (spec == 'x')
-		hex_case = "0123456789abcdef";
+	str = NULL;
+	if (spec == 'c')
+	{
+		c = va_arg(arg, int);
+		(*len)++;
+		ft_putchar_fd(c, 1);
+	}
 	else
-		hex_case = "0123456789ABCDEF";
-	if (nbr >= 16)
-		ft_dec_to_hex(spec, nbr / 16, len);
-	ft_putchar_fd(hex_case[nbr % 16], 1);
-	(*len)++;
-}
-
-void	ft_print_hex(char spec, va_list arg, int *len)
-{
-	int		nbr;
-
-	nbr = va_arg(arg, unsigned int);
-	ft_dec_to_hex(spec, nbr, len);
+	{
+		str = va_arg(arg, char *);
+		if (!str)
+			str = "(null)";
+		(*len) += ft_strlen(str);
+		ft_putstr_fd(str, 1);
+	}
 }

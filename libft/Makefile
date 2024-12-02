@@ -6,7 +6,7 @@
 #    By: kricci-d <kricci-d@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/15 14:26:45 by keomalima         #+#    #+#              #
-#    Updated: 2024/11/21 12:51:30 by kricci-d         ###   ########.fr        #
+#    Updated: 2024/12/02 09:45:35 by kricci-d         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,8 @@ FUNCTIONS = ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c ft_isasci
 	ft_putnbr_fd.c ft_putstr_fd.c ft_split.c ft_strchr.c ft_strdup.c \
 	ft_strjoin.c ft_strlcat.c ft_strlcpy.c ft_strlen.c ft_strmapi.c \
 	ft_striteri.c ft_strncmp.c ft_strnstr.c ft_strrchr.c ft_substr.c \
-	ft_strtrim.c ft_tolower.c ft_toupper.c
+	ft_strtrim.c ft_tolower.c ft_toupper.c ft_print_char.c ft_print_hex.c \
+	ft_print_int.c ft_print_ptr.c ft_printf.c
 
 OBJS = $(FUNCTIONS:.c=.o)
 
@@ -38,7 +39,7 @@ all : $(NAME)
 $(NAME) : $(OBJS)
 	ar rcs $(NAME) $(OBJS)
 
-%.o : %.c libft.h Makefile
+%.o : %.c libft.h ft_printf.h Makefile
 	$(CC) $(CFLAGS) -c $< -o $@
 
 bonus : $(NAME) $(BONUS_OBJS) .bonus
