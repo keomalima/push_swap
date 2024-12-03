@@ -6,7 +6,7 @@
 /*   By: kricci-d <kricci-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 11:07:26 by keomalima         #+#    #+#             */
-/*   Updated: 2024/12/02 13:28:07 by kricci-d         ###   ########.fr       */
+/*   Updated: 2024/12/03 09:36:48 by kricci-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,8 @@ void	algo_parse(int *stack_a, int *stack_b, int *a_len, int *b_len)
 			stack_3(stack_a, *a_len);
 		if (*a_len == 4)
 			stack_4(stack_a, stack_b, a_len, b_len);
+		if (*a_len == 5)
+			stack_5(stack_a, stack_b, a_len, b_len);
 	}
 }
 
@@ -73,18 +75,9 @@ int	push_swap(int ac, char**av)
 		return (1);
 	i = 0;
 	algo_parse(stack_a, stack_b, &stack_a_len, &stack_b_len);
-	ft_printf("Stack_a\n");
-	while (stack_a_len > i)
-		ft_printf("[%i]", stack_a[i++]);
+	//print_stacks(stack_a, stack_b, stack_a_len, stack_b_len);
 	free(stack_a);
-	i = 0;
-	if (stack_b)
-	{
-		ft_printf("\nStack_b\n");
-		while (stack_b_len > i)
-			ft_printf("[%i]", stack_b[i++]);
-		free(stack_b);
-	}
+	free(stack_b);
 	return (0);
 }
 

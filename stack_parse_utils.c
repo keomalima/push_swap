@@ -3,14 +3,34 @@
 /*                                                        :::      ::::::::   */
 /*   stack_parse_utils.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: keomalima <keomalima@student.42.fr>        +#+  +:+       +#+        */
+/*   By: kricci-d <kricci-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 15:10:38 by keomalima         #+#    #+#             */
-/*   Updated: 2024/11/30 17:35:55 by keomalima        ###   ########.fr       */
+/*   Updated: 2024/12/03 09:01:36 by kricci-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	print_stacks(int *stack_a, int *stack_b, int stack_a_len, int stack_b_len)
+{
+	int	i;
+
+	i = 0;
+	if (stack_a[0])
+	{
+		ft_printf("Stack_a\n");
+		while (stack_a_len > i)
+			ft_printf("[%i]", stack_a[i++]);
+		i = 0;
+	}
+	if (stack_b[0])
+	{
+		ft_printf("\nStack_b\n");
+		while (stack_b_len > i)
+			ft_printf("[%i]", stack_b[i++]);
+	}
+}
 
 int	validate_unique_stack(int *stack, int len)
 {

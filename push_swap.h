@@ -6,7 +6,7 @@
 /*   By: kricci-d <kricci-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 11:13:07 by keomalima         #+#    #+#             */
-/*   Updated: 2024/12/02 12:44:42 by kricci-d         ###   ########.fr       */
+/*   Updated: 2024/12/03 09:35:56 by kricci-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,7 @@ void	rev_rot(int *stack_a, int *stack_b, int stack_a_len, int stack_b_len);
 
 void	stack_3(int *stack_a, int a_len);
 void	stack_4(int *stack_a, int *stack_b, int *a_len, int *b_len);
+void	print_stacks(int *stack_a, int *stack_b, int stack_a_len, int stack_b_len);
+void	stack_5(int *stack_a, int *stack_b, int *a_len, int *b_len);
 
 #endif
