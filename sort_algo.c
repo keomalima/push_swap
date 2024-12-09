@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_algo.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kricci-d <kricci-d@student.42.fr>          +#+  +:+       +#+        */
+/*   By: keomalima <keomalima@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 12:19:15 by kricci-d          #+#    #+#             */
-/*   Updated: 2024/12/04 15:08:20 by kricci-d         ###   ########.fr       */
+/*   Updated: 2024/12/09 22:40:30 by keomalima        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,4 +66,3 @@ void	stack_5(int *stack_a, int *stack_b, int *a_len, int *b_len)
 	stack_4(stack_a, stack_b, a_len, b_len);
 	push_a(stack_a, stack_b, a_len, b_len);
 }
-

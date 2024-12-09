@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_parse_utils.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kricci-d <kricci-d@student.42.fr>          +#+  +:+       +#+        */
+/*   By: keomalima <keomalima@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 15:10:38 by keomalima         #+#    #+#             */
-/*   Updated: 2024/12/04 08:16:36 by kricci-d         ###   ########.fr       */
+/*   Updated: 2024/12/09 22:38:27 by keomalima        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,14 @@ void	print_stacks(int *stack_a, int *stack_b, int stack_a_len, int stack_b_len)
 	{
 		ft_printf("Stack_a\n");
 		while (stack_a_len > i)
-			ft_printf(GREEN"[%i]"RESET, stack_a[i++]);
+			ft_printf("[%i]", stack_a[i++]);
 		i = 0;
 	}
 	if (stack_b[0])
 	{
 		ft_printf("\nStack_b\n");
 		while (stack_b_len > i)
-			ft_printf(CYAN"[%i]"RESET, stack_b[i++]);
+			ft_printf("[%i]", stack_b[i++]);
 		ft_printf("\n");
 	}
 }

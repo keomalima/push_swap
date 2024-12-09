@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_cost.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kricci-d <kricci-d@student.42.fr>          +#+  +:+       +#+        */
+/*   By: keomalima <keomalima@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 16:30:21 by kricci-d          #+#    #+#             */
-/*   Updated: 2024/12/09 17:06:05 by kricci-d         ###   ########.fr       */
+/*   Updated: 2024/12/09 22:42:47 by keomalima        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,14 +80,14 @@ int	rev_rotate_cost(int a_len, int b_len, int position, int index)
 
 int	find_cheapest(int a_len, int b_len, int position, int index)
 {
-	int	rot_cost;
-	int	rev_cost;
-	int	mixed_cost_1;
-	int	mixed_cost_2;
+	int	rr_cost;
+	int	rrr_cost;
+	int	rota_revb_cost;
+	int	reva_rotb_cost;
 
-	rot_cost = rotate_cost(position, index);
-	rev_cost = rev_rotate_cost(a_len, b_len, position, index);
-	mixed_cost_1 = index + (b_len - position);
-	mixed_cost_2 = (a_len - index) + index;
-	return (ft_min (rot_cost, rev_cost, mixed_cost_1, mixed_cost_2));
+	rr_cost = rotate_cost(position, index);
+	rrr_cost = rev_rotate_cost(a_len, b_len, position, index);
+	rota_revb_cost = index + (b_len - position);
+	reva_rotb_cost = (a_len - index) + position;
+	return (ft_min (rr_cost, rrr_cost, rota_revb_cost, reva_rotb_cost));
 }

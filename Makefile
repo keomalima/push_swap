@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: kricci-d <kricci-d@student.42.fr>          +#+  +:+       +#+         #
+#    By: keomalima <keomalima@student.42.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/29 14:02:27 by keomalima         #+#    #+#              #
-#    Updated: 2024/12/02 12:23:09 by kricci-d         ###   ########.fr        #
+#    Updated: 2024/12/09 22:12:52 by keomalima        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,8 @@ RM = rm -f
 CC = cc
 FLAGS = -Wall -Werror -Wextra
 SRCS = push_swap.c stack_parse_utils.c swap_algo.c push_swap.c \
-	rotate_algo.c rev_rot_algo.c sort_algo.c
+	rotate_algo.c rev_rot_algo.c sort_algo.c instru_sort.c \
+	push_algo.c turkish_algo.c sort_cost.c action_sort.c
 OBJS = $(SRCS:.c=.o)
 
 LIBFTDIR = ./libft

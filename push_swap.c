@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kricci-d <kricci-d@student.42.fr>          +#+  +:+       +#+        */
+/*   By: keomalima <keomalima@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 11:07:26 by keomalima         #+#    #+#             */
-/*   Updated: 2024/12/09 11:11:27 by kricci-d         ###   ########.fr       */
+/*   Updated: 2024/12/09 21:34:08 by keomalima        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int	stack_parse(int ac, char **av, int *len, int **stack)
 	return (0);
 }
 
-void	algo_parse(int *stack_a, int *stack_b, int *a_len, int *b_len)
+static void	algo_parse(int *stack_a, int *stack_b, int *a_len, int *b_len)
 {
 	if (is_order(stack_a, *a_len))
 	{
@@ -66,7 +66,6 @@ int	push_swap(int ac, char**av)
 	int	*stack_b;
 	int	stack_a_len;
 	int	stack_b_len;
-	int	i;
 
 	stack_a_len = 0;
 	stack_b_len = 0;
@@ -75,7 +74,6 @@ int	push_swap(int ac, char**av)
 	stack_b = calloc(stack_a_len, sizeof(int));
 	if (!stack_b)
 		return (1);
-	i = 0;
 	algo_parse(stack_a, stack_b, &stack_a_len, &stack_b_len);
 	print_stacks(stack_a, stack_b, stack_a_len, stack_b_len);
 	free(stack_a);
