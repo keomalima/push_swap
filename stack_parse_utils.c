@@ -6,7 +6,7 @@
 /*   By: kricci-d <kricci-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 15:10:38 by keomalima         #+#    #+#             */
-/*   Updated: 2024/12/10 10:50:04 by kricci-d         ###   ########.fr       */
+/*   Updated: 2024/12/10 11:57:14 by kricci-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,6 +120,8 @@ int	is_arg_valid(int ac, char **av)
 	while (ac > ++i)
 	{
 		j = 0;
+		if (ft_strlen(av[i]) == 0)
+			return (1);
 		while (av[i][j])
 		{
 			while (av[i][j] && av[i][j] == ' ')
