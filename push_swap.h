@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: keomalima <keomalima@student.42.fr>        +#+  +:+       +#+        */
+/*   By: kricci-d <kricci-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 11:13:07 by keomalima         #+#    #+#             */
-/*   Updated: 2024/12/09 22:37:37 by keomalima        ###   ########.fr       */
+/*   Updated: 2024/12/10 10:50:14 by kricci-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,17 +40,17 @@ void	rev_rot(int *stack_a, int *stack_b, int stack_a_len, int stack_b_len);
 
 void	stack_3(int *stack_a, int a_len);
 void	stack_4(int *stack_a, int *stack_b, int *a_len, int *b_len);
-void	print_stacks(int *stack_a, int *stack_b, int a_len, int b_len);
-void	stack_5(int *stack_a, int *stack_b, int *a_len, int *b_len);
 
 void	turkish_sort(int *stack_a, int *stack_b, int *a_len, int *b_len);
 int		cheapest_index(int *stack_a, int *stack_b, int a_len, int b_len);
+int		find_cheapest(int a_len, int b_len, int position, int index);
+int		find_position_b(int *stack_b, int b_len, int nbr);
+int		find_position_a(int *stack, int len, int nbr);
+char	*find_action(int a_len, int b_len, int position, int index);
+
 int		rev_rotate_cost(int a_len, int b_len, int position, int index);
 int		rotate_cost(int position, int index);
 int		ft_min(int a, int b, int c, int d);
-int		find_cheapest(int a_len, int b_len, int position, int index);
-int		find_position(int *stack_b, int b_len, int nbr);
-char	*find_action(int a_len, int b_len, int position, int index);
 
 void	execute_rrr(int *stack_a, int *stack_b, int a_len, int b_len);
 void	execute_rr(int *stack_a, int *stack_b, int a_len, int b_len);

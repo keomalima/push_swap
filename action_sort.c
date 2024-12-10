@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   action_sort.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: keomalima <keomalima@student.42.fr>        +#+  +:+       +#+        */
+/*   By: kricci-d <kricci-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 21:41:39 by keomalima         #+#    #+#             */
-/*   Updated: 2024/12/09 22:40:18 by keomalima        ###   ########.fr       */
+/*   Updated: 2024/12/10 10:32:36 by kricci-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	execute_reva_rotb(int *stack_a, int *stack_b, int a_len, int b_len)
 	int	index;
 
 	index = cheapest_index(stack_a, stack_b, a_len, b_len);
-	position = find_position(stack_b, b_len, stack_a[index]);
+	position = find_position_b(stack_b, b_len, stack_a[index]);
 	rra_cost = a_len - index;
 	rb_cost = position;
 	while (rra_cost > 0)
@@ -43,7 +43,7 @@ void	execute_rota_revb(int *stack_a, int *stack_b, int a_len, int b_len)
 	int	index;
 
 	index = cheapest_index(stack_a, stack_b, a_len, b_len);
-	position = find_position(stack_b, b_len, stack_a[index]);
+	position = find_position_b(stack_b, b_len, stack_a[index]);
 	ra_cost = index;
 	rrb_cost = b_len - position;
 	while (ra_cost > 0)
@@ -66,7 +66,7 @@ void	execute_rr(int *stack_a, int *stack_b, int a_len, int b_len)
 	int	index;
 
 	index = cheapest_index(stack_a, stack_b, a_len, b_len);
-	position = find_position(stack_b, b_len, stack_a[index]);
+	position = find_position_b(stack_b, b_len, stack_a[index]);
 	ra_cost = index;
 	rb_cost = position;
 	while (ra_cost > 0 && rb_cost > 0)
@@ -95,7 +95,7 @@ void	execute_rrr(int *stack_a, int *stack_b, int a_len, int b_len)
 	int	index;
 
 	index = cheapest_index(stack_a, stack_b, a_len, b_len);
-	position = find_position(stack_b, b_len, stack_a[index]);
+	position = find_position_b(stack_b, b_len, stack_a[index]);
 	rra_cost = a_len - index;
 	rrb_cost = b_len - position;
 	while (rra_cost > 0 && rrb_cost > 0)

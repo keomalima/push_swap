@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: keomalima <keomalima@student.42.fr>        +#+  +:+       +#+        */
+/*   By: kricci-d <kricci-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 11:07:26 by keomalima         #+#    #+#             */
-/*   Updated: 2024/12/09 21:34:08 by keomalima        ###   ########.fr       */
+/*   Updated: 2024/12/10 10:39:08 by kricci-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,9 +53,7 @@ static void	algo_parse(int *stack_a, int *stack_b, int *a_len, int *b_len)
 			stack_3(stack_a, *a_len);
 		if (*a_len == 4)
 			stack_4(stack_a, stack_b, a_len, b_len);
-		if (*a_len == 5)
-			stack_5(stack_a, stack_b, a_len, b_len);
-		if (*a_len > 5)
+		if (*a_len > 4)
 			turkish_sort(stack_a, stack_b, a_len, b_len);
 	}
 }
@@ -75,7 +73,6 @@ int	push_swap(int ac, char**av)
 	if (!stack_b)
 		return (1);
 	algo_parse(stack_a, stack_b, &stack_a_len, &stack_b_len);
-	print_stacks(stack_a, stack_b, stack_a_len, stack_b_len);
 	free(stack_a);
 	free(stack_b);
 	return (0);
